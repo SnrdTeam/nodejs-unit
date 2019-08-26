@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyName>Adeptik.NodeJsUnit</AssemblyName>
+    <RootNamespace>Adeptik.NodeJsUnit</RootNamespace>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Adeptik.NodeJsUnit</PackageId>
+    <Version>1.0.0</Version>
+    <Title>NodeJs Unit</Title>
+    <Authors>Adeptik</Authors>
+    <Owners>Adeptik</Owners>
+    <Product>Node Js Unit - test adapter between xUnit and Jasmine</Product>
+    <Description>Generates xUnit test Fact which runs tests with Jasmine.</Description>
+    <Tags>UnitTest</Tags>
+    <Copyright>Adeptik</Copyright>
+    <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.NodeServices" Version="3.0.0-preview8.19405.7" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="build/**/*" Pack="true" PackagePath="build/$(TargetFramework)" />
+  </ItemGroup>
+
+</Project>
