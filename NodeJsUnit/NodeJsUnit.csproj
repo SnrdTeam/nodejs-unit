@@ -7,9 +7,32 @@
     <IsPackable>true</IsPackable>
   </PropertyGroup>
 
+  <!-- Version -->
+
+  <PropertyGroup>
+    <SemanticVersion>1.0.0</SemanticVersion>
+    <PreReleaseLabel></PreReleaseLabel>
+    <BuildMetadata>developer.build</BuildMetadata>
+    <PreReleaseLabelWithPrefix Condition=" '$(PreReleaseLabel)' != '' ">-$(PreReleaseLabel)</PreReleaseLabelWithPrefix>
+    <BuildMetadataWithPrefix Condition=" '$(BuildMetadata)' != '' ">+$(BuildMetadata)</BuildMetadataWithPrefix>
+    <Version>$(SemanticVersion)$(PreReleaseLabelWithPrefix)$(BuildMetadataWithPrefix)</Version>
+    <AssemblyVersion>$(SemanticVersion)</AssemblyVersion>
+    <FileVersion>$(SemanticVersion)</FileVersion>
+    <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <Target Name="ValidateVersion" BeforeTargets="BeforeBuild">
+    <PropertyGroup>
+      <!-- Regular expression from https://github.com/semver/semver/issues/232 -->
+      <IsVersionValid>$([System.Text.RegularExpressions.Regex]::IsMatch($(Version), `^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-(0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(\.(0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*)?(\+[0-9a-zA-Z-]+(\.[0-9a-zA-Z-]+)*)?$`, RegexOptions.None))</IsVersionValid>
+    </PropertyGroup>
+    <Error Text="Version has invalid format. See https://semver.org" Condition=" '$(IsVersionValid)' != 'True' " />
+  </Target>
+
+  <!-- /Version -->
+
   <PropertyGroup>
     <PackageId>Adeptik.NodeJsUnit</PackageId>
-    <Version>1.0.0</Version>
     <Title>NodeJs Unit</Title>
     <Authors>Adeptik</Authors>
     <Owners>Adeptik</Owners>
