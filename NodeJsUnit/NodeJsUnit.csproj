@@ -33,6 +33,13 @@
   <!-- /Version -->
 
   <PropertyGroup>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>Adeptik-PublicKey.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>False</DelaySign>
+    <PublicSign>True</PublicSign>
+  </PropertyGroup>
+  
+  <PropertyGroup>
     <Company>Adeptik</Company>
     <PackageId>Adeptik.NodeJsUnit</PackageId>
     <Title>NodeJs Unit</Title>
