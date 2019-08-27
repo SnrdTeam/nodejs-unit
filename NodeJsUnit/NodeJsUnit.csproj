@@ -5,6 +5,7 @@
     <AssemblyName>Adeptik.NodeJsUnit</AssemblyName>
     <RootNamespace>Adeptik.NodeJsUnit</RootNamespace>
     <IsPackable>true</IsPackable>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
   </PropertyGroup>
 
   <!-- Version -->
@@ -32,6 +33,7 @@
   <!-- /Version -->
 
   <PropertyGroup>
+    <Company>Adeptik</Company>
     <PackageId>Adeptik.NodeJsUnit</PackageId>
     <Title>NodeJs Unit</Title>
     <Authors>Adeptik</Authors>
