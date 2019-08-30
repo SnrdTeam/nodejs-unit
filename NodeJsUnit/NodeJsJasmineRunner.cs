@@ -35,7 +35,7 @@ namespace Adeptik.NodeJsUnit
             var expectedTestFileHash = BigInteger.Parse("0" + testFileHash, NumberStyles.HexNumber)
                 .ToByteArray(isUnsigned: true, isBigEndian: true);
             var actualTestFileHash = Hasher.ComputeHash(File.OpenRead(testFileFullName));
-            Assert.Equal(expectedTestFileHash, actualTestFileHash);
+            Assert.True(expectedTestFileHash.SkipWhile(x => x == 0).SequenceEqual(actualTestFileHash.SkipWhile(x => x == 0)), "Test file is invalid.");
 
             CheckRequiredModules(output, projectRoot);
 

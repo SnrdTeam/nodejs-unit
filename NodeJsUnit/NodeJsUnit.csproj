@@ -11,7 +11,7 @@
   <!-- Version -->
 
   <PropertyGroup>
-    <SemanticVersion>1.0.0</SemanticVersion>
+    <SemanticVersion>1.0.1</SemanticVersion>
     <PreReleaseLabel></PreReleaseLabel>
     <BuildMetadata>developer.build</BuildMetadata>
     <PreReleaseLabelWithPrefix Condition=" '$(PreReleaseLabel)' != '' ">-$(PreReleaseLabel)</PreReleaseLabelWithPrefix>
