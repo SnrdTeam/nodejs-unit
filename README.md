@@ -1,5 +1,7 @@
 # NodeJS Unit
 
+[![Nuget Package](https://flat.badgen.net/nuget/v/Adeptik.NodeJsUnit)](https://www.nuget.org/packages/Adeptik.NodeJsUnit/)
+
 Simple test adapter between xUnit and Jasmine. Generates xUnit test Fact which runs tests with Jasmine.
 
 ## Installation
